@@ -15,12 +15,11 @@ anchors:
     name: learn
 ---
 
-
 <a name="info"></a>
-<p class="intro">M-industries software is different.</p>
-
 We spent 15 years researching a new way of building software,
 not through programming but completely driven by data models.
+
+<p class="intro">M-industries software is different.</p>
 
 We call our programming language and technology **"Alan"**
 
@@ -41,7 +40,7 @@ In many industries Excel has taken on much more than it was ever meant to deal w
 Replacing those Excel sheets with "real software" is expensive and risky,
 as is upgrading legacy software.
 
-M-industries can help you make "real software" withtout the investment and risk,
+M-industries can help you make "real software" without the investment and risk,
 using tools that are as easy, or easier, to use as Excel.
 
 And because it's so easy to iterate on Alan applications, you don't have to do everything
