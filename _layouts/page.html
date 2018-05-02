@@ -2,10 +2,25 @@
 <html lang="en">
 	{% include head.html %}
 	<body>
+		{% include header.html %}
 
-	{{ content }}
+		<article>
+			<h1>{{ page.title }}</h1>
+			<nav>
+				<ul>
+					{% for anchor in page.anchors %}
+				    <li>
+				    	<a href="#{{ anchor.name }}">{{ anchor.label }}</a>
+				    </li>
+				    {% endfor %}
+				</ul>
+			</nav>
+			<section>
+				{{ content }}
+			</section>
+		</article>
 
-	{% include footer.html %}
-	{% include scripts.html %}
+		{% include footer.html %}
+		{% include scripts.html %}
 	</body>
 </html>
