@@ -1,22 +1,18 @@
 <header>
 	<nav>
-		<a class="logo" href="{{ site.url }}" title="Home">
+		<a class="logo" href="{{ site.url }}{{ site.baseurl }}/" title="Home">
 			<img src="{{ 'assets/m-industries.svg' | relative_url }}" alt="M-industries">
 		</a>
 		<ul>
-
-			<li>
-				<a href="pages/vf.html">Products</a>
-			</li>
-			<li>
-				<a href="#">Services</a>
-			</li>
-
-			<li>
-				<a href="#" class="button">Demo</a>
-			</li>
-
+			{% for item in site.pages %}
+				{% if item.category == "main" %}
+					<li class="{% if item.url == page.url %}current{% endif %}">
+						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
 		</ul>
+
 		<ul class="secondary">
 
 			{% for item in site.pages %}
