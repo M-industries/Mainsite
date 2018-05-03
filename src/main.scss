@@ -27,6 +27,9 @@ $beige: #b6a99b;
 $ratio: 1.414;
 $fat: 1rem/$ratio 1rem 1rem/$ratio/$ratio 1rem;
 
+$base-width: 45rem;              // = 720 / 16px
+$breakpoint: $base-width + 5rem; // + 80px
+
 * {
 	box-sizing: border-box;
 }
@@ -217,7 +220,7 @@ header {
 			}
 		}
 
-		@media (max-width: 1200px) {
+		@media (max-width: $breakpoint) {
 			nav {
 				position: fixed;
 				z-index: 1;
@@ -268,12 +271,20 @@ footer {
 		text-decoration: underline;
 	}
 	.inner {
-		max-width: 720px;
+		max-width: $base-width;
 		margin: 0 auto;
 		display: flex;
-	}
-	section + section {
-		margin-left: 4rem;
+
+		section + section {
+			margin-left: 4rem;
+		}
+
+		@media (max-width: $breakpoint) {
+			flex-direction: column;
+			section + section {
+				margin-left: 0;
+			}
+		}
 	}
 
 	.support {
@@ -337,7 +348,7 @@ article + .hero {
 }
 
 article {
-	max-width: 720px;
+	max-width: $base-width;
 	margin: 4rem auto 0 auto;
 
 	h1 {
@@ -368,6 +379,24 @@ article {
 	}
 	section:not(.homepage) {
 		padding-left: 10rem*$ratio;
+	}
+
+	@media (max-width: $breakpoint) {
+		blockquote,
+		nav {
+			display: none;
+		}
+		section:not(.homepage) {
+			padding-left: 0;
+			max-width: $base-width - 8rem*$ratio;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 1rem*$ratio;
+			padding-right: 1rem*$ratio;
+		}
+		h1 {
+			padding-left: 1rem*$ratio;
+		}
 	}
 }
 
