@@ -7,8 +7,8 @@ permalink: /about/
 anchors:
   - label: M-industries
     name: info
-  - label: Replace Excel
-    name: excel
+  - label: Alan
+    name: alan
   - label: Learn it
     name: learn
 ---
@@ -29,21 +29,18 @@ This method is fast and iterates fast, like creating something in Excel would.
 However, Alan ensures data accuracy and consistency and scales up to enterprise level.
 
 
-<a name="excel"></a>
-## Replace Excel
+<a name="alan"></a>
+## Alan
 
-We're on a mission to create the missing link
-between what we think of as "applications" and Excel sheets.
-In many industries Excel has taken on much more than it was ever meant to deal with.
-Replacing those Excel sheets with "real software" is expensive and risky,
-as is upgrading legacy software.
+The Alan project has its own website, with more details about
+the language and the systems that it supports.
 
-M-industries can help you make "real software" without the investment and risk,
-using tools that are as easy, or easier, to use as Excel.
+Go to the [Alan micro-site](https://alan-platform.com) to learn more.
 
-And because it's so easy to iterate on Alan applications, you don't have to do everything
-at once like you would when migrating to new applications.
-We bet you don't want to hear the word "migrate" or "roll-out" anymore either.
+
+### Start Building
+We have documentation and templates ready for you in [our GitHub repositories](https://github.com/M-industries). Check out the [project template](https://github.com/M-industries/AlanProjectTemplate) to get started.
+
 
 
 <a name="learn"></a>

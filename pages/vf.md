@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visual Factory
+title: 'Case: Visual Factory'
 category: main
 permalink: /vf/
 
