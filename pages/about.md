@@ -58,8 +58,4 @@ Request a demo and see with your own eyes how we create easy to use programs wit
 You'll be able to read and understand how we do it too,
 so you can get your hands dirty in no time.
 
-**Corno Schraverus**  
-[+31 6 51 52 50 53](tel:+31651525053)  
-[+31 15 268 26 17](tel:+31651525053)  
-[cschraverus@m-industries.com](mailto:cschraverus@m-industries.com)
-
+{% include contact.md %}
