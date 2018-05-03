@@ -324,14 +324,20 @@ footer {
 
 .hero {
 	height: 32rem;
+	max-height: 66vh;
 	text-align: center;
 	background: $grey6;
 	border-top: 1px solid $grey5;
 	border-bottom: 1px solid $grey5;
-	background-image: url("art/swoosh.svg");
+	background-image: url("../assets/swoosh.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: left;
+
+	&.photo {
+		background-size: cover;
+		background-position: center;
+	}
 }
 .hero img {
 	display: inline-block;
@@ -339,7 +345,7 @@ footer {
 	max-width: 100%;
 }
 header + .hero {
-	padding-top: 3.2rem;
+	margin-top: 3.2rem;
 }
 .hero + article {
 	margin-top: 0;
