@@ -4,12 +4,12 @@
 			<img src="{{ 'assets/m-industries.svg' | relative_url }}" alt="M-industries">
 		</a>
 		<ul>
+
 			<li>
 				<a href="pages/vf.html">Products</a>
 			</li>
 			<li>
 				<a href="#">Services</a>
-				<!-- Excel 2 App / Legacy Apps -->
 			</li>
 
 			<li>
@@ -18,15 +18,15 @@
 
 		</ul>
 		<ul class="secondary">
-			<li>
-				<a href="pages/about.html">About</a>
-			</li>
-			<li>
-				<a href="pages/contact.html">Contact</a>
-			</li>
-			<li>
-				<a href="pages/contact.html#support">Support</a>
-			</li>
+
+			{% for item in site.pages %}
+				{% if item.category == "sub" %}
+					<li class="{% if item.url == page.url %}current{% endif %}">
+						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+
 			<li>
 				<a href="https://www.linkedin.com/company/m-industries" rel="external">
 					<img src="{{ 'assets/linkedin.png' | relative_url }}" height="16" alt="linkedin">

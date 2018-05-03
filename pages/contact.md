@@ -1,17 +1,15 @@
 ---
 layout: page
 title: Contact
+category: sub
 permalink: /contact/
 
 anchors:
-  -
-    label: Info & demo's
+  - label: Info & demo's
     name: info
-  -
-    label: Visit
+  - label: Visit
     name: visit
-  -
-    label: Support
+  - label: Support
     name: support
 ---
 

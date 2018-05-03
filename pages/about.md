@@ -1,17 +1,15 @@
 ---
 layout: page
 title: About
+category: sub
 permalink: /about/
 
 anchors:
-  -
-    label: M-industries
+  - label: M-industries
     name: info
-  -
-    label: Replace Excel
+  - label: Replace Excel
     name: excel
-  -
-    label: Learn it
+  - label: Learn it
     name: learn
 ---
 
