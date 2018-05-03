@@ -336,6 +336,7 @@ footer {
 .hero img {
 	display: inline-block;
 	height: 100%;
+	max-width: 100%;
 }
 header + .hero {
 	padding-top: 3.2rem;
@@ -386,7 +387,8 @@ article {
 		nav {
 			display: none;
 		}
-		section:not(.homepage) {
+		section:not(.homepage),
+		section.homepage {
 			padding-left: 0;
 			max-width: $base-width - 8rem*$ratio;
 			margin-left: auto;
@@ -426,10 +428,10 @@ blockquote {
 	background-size: 50%;
 	color: $grey2;
 	&.sapa {
-		background-image: url("art/brands/sapa.png");
+		background-image: url("../assets/brands/sapa.png");
 	}
 	&.tata {
-		background-image: url("art/brands/tata.png");
+		background-image: url("../assets/brands/tata.png");
 	}
 
 	.inner::before {
