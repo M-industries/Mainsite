@@ -5,7 +5,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400i,700");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400");
 
-
 $black: #333;
 $grey1: lighten($black, 15%);
 $grey2: lighten($black, 30%);
@@ -23,13 +22,22 @@ $teal: #1db2a2;
 
 $brand-color: #374996;
 
-$beige: #B6A99B;
+$beige: #b6a99b;
 
 $ratio: 1.414;
 $fat: 1rem/$ratio 1rem 1rem/$ratio/$ratio 1rem;
 
 * {
 	box-sizing: border-box;
+}
+
+@mixin breathe($property) {
+	transition: $property .5s ease-in-out;
+
+	&:hover,
+	&:active {
+		transition: $property .1s ease-in-out;
+	}
 }
 
 html,
@@ -107,14 +115,23 @@ header {
 	background: #fff;
 	z-index: 1;
 
-	nav {
+	.inner {
 		max-width: 1280px - 80*2;
 		margin: 0 auto;
 
-		> ul {
+		nav {
+			width: 100%;
+			display: flex;
+		}
+
+		ul {
 			display: inline-block;
 			margin: 0;
 			padding: $fat;
+
+			a {
+				@include breathe(border-bottom-color)
+			}
 
 			a,
 			a:link,
@@ -125,13 +142,11 @@ header {
 				display: inline-block;
 				border-bottom: 3px solid transparent;
 				margin-bottom: 3px;
-				transition: border-bottom-color .5s ease-in-out;
 			}
 			a:hover,
 			a:active {
 				text-decoration: none;
 				border-bottom-color: $grey5;
-				transition: border-bottom-color .1s ease-in-out;
 			}
 			a:active {
 				border-bottom-color: $grey4;
@@ -142,7 +157,7 @@ header {
 			}
 		}
 
-		> ul.secondary {
+		ul.secondary {
 			font-size: 1em/$ratio;
 			li {
 				text-align: right;
@@ -151,13 +166,13 @@ header {
 
 		// perfect the layout using flexbox
 		display: flex;
-		> ul {
+		ul {
 			display: flex;
 			align-content: center;
 			flex: 1;
-		}
-		> ul.secondary {
-			flex-grow: 0;
+			&.secondary {
+				flex-grow: 0;
+			}
 		}
 
 		li {
@@ -181,25 +196,56 @@ header {
 			}
 		}
 
-		ul ul {
-			font-style: italic;
-			padding-left: 1em/$ratio;
-			display: inline-block;
-			margin: 0;
-			li {
-				padding-left: 1em/$ratio;
+		.nav-toggle {
+			@include breathe(color);
+
+			display: none;
+			color: $black;
+			padding: $fat;
+
+			&:hover,
+			&:active {
+				color: $orange;
 			}
-			a,
-			a:link,
-			a:visited,
-			a:hover,
-			a:active {
-				color: $grey2;
+			svg {
+				fill: currentColor;
+			}
+			&.close {
+				position: absolute;
+				right: 1rem/$ratio;
+				top: 1rem/$ratio;
+			}
+		}
+
+		@media (max-width: 1200px) {
+			nav {
+				position: fixed;
+				z-index: 1;
+				background: white;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: none;
+				padding: $fat;
+				&.open {
+					display: block;
+				}
+			}
+			ul {
+				display: block;
+				flex: 0;
+				text-align: center;
+			}
+			ul.main li {
+				display: block;
+				+ li {
+					padding-left: 0;
+				}
 			}
 
-			&::before {
-				content: "/";
-				color: $grey2;
+			.nav-toggle {
+				display: block;
 			}
 		}
 	}
@@ -252,12 +298,12 @@ footer {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		transition: background .5s ease-in-out;
+
+		@include breathe(background);
 
 		&:hover,
 		&:active {
 			background: mix($brand-color, #fff, 92%);
-			transition: background .1s ease-in-out;
 		}
 	}
 	.social {
