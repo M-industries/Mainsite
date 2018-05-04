@@ -262,6 +262,10 @@ footer {
 	color: $grey6;
 	padding: 1em*$ratio*$ratio;
 
+	svg {
+		fill: #fff;
+	}
+
 	a,
 	a:link,
 	a:visited,
@@ -298,13 +302,14 @@ footer {
 			text-decoration: none;
 		}
 	}
-	.freshdesk {
+	a.freshdesk {
 		display: block;
 		border: 1px solid #fff;
 		border-radius: 6px;
 		padding: 1rem/$ratio 1rem*$ratio;
 		margin-top: 2rem*$ratio;
 		margin-bottom: 1rem*$ratio;
+		color: #fff;
 
 		display: flex;
 		align-items: center;
@@ -323,8 +328,8 @@ footer {
 }
 
 .hero {
-	height: 32rem;
-	max-height: 66vh;
+	height: 40rem;
+	max-height: 80vh;
 	text-align: center;
 	background: $grey6;
 	border-top: 1px solid $grey5;
@@ -333,10 +338,30 @@ footer {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: left;
+	display: flex;
+	align-items: center;
 
 	&.photo {
 		background-size: cover;
-		background-position: center;
+		background-position: center bottom;
+	}
+	span {
+		display: block;
+		color: $beige;
+		font-size: 2rem;
+		text-align: left;
+		position: absolute;
+		left: 50%;
+		margin-right: 1rem*$ratio;
+
+		@media (max-width: $breakpoint) {
+			font-size: 1em;
+		}
+
+		strong {
+			font-size: 2em;
+			line-height: 1;
+		}
 	}
 }
 .hero img {
@@ -344,9 +369,9 @@ footer {
 	height: 100%;
 	max-width: 100%;
 }
-header + .hero {
+/*header + .hero {
 	margin-top: 3.2rem;
-}
+}*/
 .hero + article {
 	margin-top: 0;
 }
