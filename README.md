@@ -6,6 +6,7 @@ Pages are in the `pages` directory and have the following configuration options:
 layout: page             # page for pages, home for home, default for e.g. 404
 title: About             # the H1
 category: sub            # main for the left menu, sub right
+                         # leave out the category to create an unliste page
 permalink: /about/       # url for the page
 
 anchors:                 # for in-page navigation
