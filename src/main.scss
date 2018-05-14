@@ -6,12 +6,14 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400");
 
 $black: #333;
-$grey1: lighten($black, 15%);
-$grey2: lighten($black, 30%);
-$grey3: lighten($black, 45%);
-$grey4: lighten($black, 60%);
-$grey5: lighten($black, 66%);
-$grey6: lighten($black, 75%);
+$beige: #b6a99b;
+$grey-base: mix($beige, lighten($black, 16%));
+$grey1: $grey-base;
+$grey2: lighten($grey-base, 8%);
+$grey3: lighten($grey-base, 16%);
+$grey4: lighten($grey-base, 24%);
+$grey5: lighten($grey-base, 32%);
+$grey6: lighten($grey-base, 40%);
 
 $blue: #2f59bc;
 $orange: #ffa32c;
@@ -22,7 +24,6 @@ $teal: #1db2a2;
 
 $brand-color: #374996;
 
-$beige: #b6a99b;
 
 $ratio: 1.414;
 $fat: 1rem/$ratio 1rem 1rem/$ratio/$ratio 1rem;
@@ -385,7 +386,7 @@ article {
 	margin: 4rem auto 0 auto;
 
 	h1 {
-		border-bottom: 2px solid rgba(120,120,120,.3);
+		border-bottom: 2px solid transparentize($grey4, .3);
 	}
 	.intro {
 		color: $orange;
