@@ -139,7 +139,7 @@ header {
 			padding: $fat;
 
 			a {
-				@include breathe(border-bottom-color)
+				@include breathe(border-bottom-color);
 			}
 
 			a,
@@ -339,13 +339,12 @@ footer {
 	background-image: url("../assets/swoosh.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: left;
+	background-position: center;
 	display: flex;
 	align-items: center;
 
 	&.photo {
 		background-size: cover;
-		background-position: center bottom;
 	}
 	span {
 		display: block;
@@ -447,6 +446,20 @@ article {
 	}
 }
 
+
+a.button {
+	background: $orange;
+	border: 1px solid darken($orange, 8%);
+	border-radius: 6px;
+	color: #fff;
+	padding: 0 1em/$ratio/$ratio;
+	@include breathe(background);
+	&:hover,
+	&:active {
+		text-decoration: none;
+		background: darken($orange, 8%);
+	}
+}
 
 blockquote {
 	quotes: "“" " ”" "‘" "’";
