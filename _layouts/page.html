@@ -18,6 +18,11 @@
 				    </li>
 				    {% endfor %}
 				</ul>
+
+				{% for button in page.buttons %}
+		    	<a class="button" href="{{ button.link | relative_url }}">{{ button.label }}</a>
+			    {% endfor %}
+
 			</nav>
 			<section>
 				{{ content }}

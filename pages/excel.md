@@ -6,6 +6,10 @@ permalink: /excel/
 
 hero: /assets/page-hero.jpg
 
+buttons:
+  - label: Get a demo
+    link: /contact/
+
 anchors:
   - label: Too much Excel
     name: much

@@ -4,6 +4,10 @@ title: Contact
 category: sub
 permalink: /contact/
 
+buttons:
+  - label: Call now
+    link: tel:+31651525053
+
 anchors:
   - label: Info & demo's
     name: info

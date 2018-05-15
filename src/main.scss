@@ -419,10 +419,10 @@ article {
 	nav {
 		position: absolute;
 		width: 8rem*$ratio;
-		font-size: 1em/$ratio;
 		line-height: $ratio*$ratio;
+		text-align: right;
 		ul {
-			text-align: right;
+			font-size: 1em/$ratio;
 			list-style: none;
 			li::after {
 				content: "\25CF";
