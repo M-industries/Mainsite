@@ -109,6 +109,9 @@ a[name] {
 	display: block;
 	position: relative;
 	top: -4rem;
+	.has-subnav ~ article & {
+		top: -6rem;
+	}
 }
 
 header {
@@ -124,134 +127,147 @@ header {
 		margin: 0 auto;
 		display: flex;
 		position: relative;
+	}
 
+	nav {
+		width: 100%;
+		display: flex;
+	}
+
+	ul {
+		display: inline-block;
+		display: flex;
+		align-content: center;
+		flex: 1;
+		margin: 0;
+		padding: $fat;
+
+		a {
+			@include breathe(border-bottom-color);
+		}
+
+		a,
+		a:link,
+		a:visited,
+		a:hover,
+		a:active {
+			color: $black;
+			display: inline-block;
+			border-bottom: 3px solid transparent;
+			margin-bottom: 3px;
+		}
+		a:hover,
+		a:active {
+			text-decoration: none;
+			border-bottom-color: $grey5;
+		}
+		a:active {
+			border-bottom-color: $grey4;
+		}
+		.current-section > a {
+			border-bottom-color: $grey5;
+			font-weight: bold;
+		}
+		.current > a {
+			border-bottom-color: $orange;
+			font-weight: bold;
+		}
+
+		&.secondary {
+			flex-grow: 0;
+			font-size: 1em/$ratio;
+			position: absolute;
+			right: 0;
+			li {
+				text-align: right;
+			}
+		}
+	}
+
+	li {
+		display: inline-block;
+		line-height: calc(2rem - 6px);
+		+ li {
+			padding-left: 1em*$ratio;
+		}
+		svg,
+		img {
+			margin-bottom: -4px;
+		}
+	}
+
+	.logo {
+		padding: $fat;
+		border-right: 1px solid $grey5;
+		float: left;
+		img {
+			display: block;
+			height: 1.414rem;
+		}
+	}
+
+	.nav-toggle {
+		@include breathe(color);
+
+		display: none;
+		color: $black;
+		padding: $fat;
+
+		&:hover,
+		&:active {
+			color: $orange;
+		}
+		svg {
+			fill: currentColor;
+		}
+		&.close {
+			position: absolute;
+			right: 1rem/$ratio;
+			top: 1rem/$ratio;
+		}
+	}
+
+	@media (max-width: $breakpoint) {
 		nav {
-			width: 100%;
-			display: flex;
-		}
-
-		ul {
-			display: inline-block;
-			display: flex;
-			align-content: center;
-			flex: 1;
-			margin: 0;
+			position: fixed;
+			z-index: 1;
+			background: white;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: none;
 			padding: $fat;
-
-			a {
-				@include breathe(border-bottom-color);
-			}
-
-			a,
-			a:link,
-			a:visited,
-			a:hover,
-			a:active {
-				color: $black;
-				display: inline-block;
-				border-bottom: 3px solid transparent;
-				margin-bottom: 3px;
-			}
-			a:hover,
-			a:active {
-				text-decoration: none;
-				border-bottom-color: $grey5;
-			}
-			a:active {
-				border-bottom-color: $grey4;
-			}
-			.current > a {
-				border-bottom-color: $orange;
-				font-weight: bold;
-			}
-
-			&.secondary {
-				flex-grow: 0;
-				font-size: 1em/$ratio;
-				position: absolute;
-				right: 0;
-				li {
-					text-align: right;
-				}
-			}
-		}
-
-		li {
-			display: inline-block;
-			line-height: calc(2rem - 6px);
-			+ li {
-				padding-left: 1em*$ratio;
-			}
-			svg,
-			img {
-				margin-bottom: -4px;
-			}
-		}
-
-		.logo {
-			padding: $fat;
-			border-right: 1px solid $grey5;
-			float: left;
-			img {
+			&.open {
 				display: block;
-				height: 1.414rem;
 			}
+		}
+		ul {
+			display: block;
+			flex: 0;
+			text-align: center;
+		}
+		ul.main li {
+			display: block;
+			+ li {
+				padding-left: 0;
+			}
+		}
+		ul.secondary {
+			position: static;
 		}
 
 		.nav-toggle {
-			@include breathe(color);
-
-			display: none;
-			color: $black;
-			padding: $fat;
-
-			&:hover,
-			&:active {
-				color: $orange;
-			}
-			svg {
-				fill: currentColor;
-			}
-			&.close {
-				position: absolute;
-				right: 1rem/$ratio;
-				top: 1rem/$ratio;
-			}
+			display: block;
 		}
+	}
 
-		@media (max-width: $breakpoint) {
-			nav {
-				position: fixed;
-				z-index: 1;
-				background: white;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				display: none;
-				padding: $fat;
-				&.open {
-					display: block;
-				}
-			}
-			ul {
-				display: block;
-				flex: 0;
-				text-align: center;
-			}
-			ul.main li {
-				display: block;
-				+ li {
-					padding-left: 0;
-				}
-			}
-			ul.secondary {
-				position: static;
-			}
-
-			.nav-toggle {
-				display: block;
-			}
+	.sub-header {
+		border-top: 1px dotted $grey5;
+		font-style: italic;
+		ul {
+			padding-top: 3px;
+			padding-bottom: 0;
 		}
 	}
 }
@@ -375,6 +391,12 @@ footer {
 			}
 		}
 	}
+	.has-subnav + & {
+		top: 8rem;
+	}
+	.page .has-subnav ~ & + article {
+		margin-top: 12rem;
+	}
 
 	> span {
 		display: block;
@@ -406,6 +428,10 @@ footer {
 article {
 	max-width: $base-width;
 	margin: 4rem auto 0 auto;
+
+	.has-subnav ~ & {
+		margin-top: 6rem;
+	}
 
 	h1 {
 		border-bottom: 2px solid transparentize($grey2, .7);

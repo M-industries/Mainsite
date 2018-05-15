@@ -2,7 +2,6 @@
 layout: page
 title: Legacy Systems
 category: main
-permalink: /legacy/
 
 anchors:
   - label: Integrate and extend

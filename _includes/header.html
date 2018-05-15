@@ -1,4 +1,27 @@
-<header>
+{% assign page_url = page.url | remove_first: "/pages/" %}
+{% assign page_url_parts = page_url | split: "/" %}
+{% assign page_section = page_url_parts | first %}
+{% assign page_section = page_section | remove_first: ".html" %}
+
+{% assign has_sub_nav = false %}
+{% unless page.category == "sub" or page.layout == "home" %}
+{% capture sub_nav %}
+{% for item in site.pages %}
+	{% assign item_url = item.url | remove_first: "/pages/" %}
+	{% assign item_url_parts = item_url | split: "/" %}
+	{% assign item_section = item_url_parts | first %}
+
+	{% unless item_section contains '.html' or item_section != page_section %}
+		{% assign has_sub_nav = true %}
+		<li class="{% if item.url == page.url %}current{% endif %}">
+			<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+		</li>
+	{% endunless %}
+{% endfor %}
+{% endcapture %}
+{% endunless %}
+
+<header class="{% if has_sub_nav %}has-subnav{% endif %}">
 	<div class="inner">
 
 		<a class="logo" href="{{ site.url }}{{ site.baseurl }}/" title="Home">
@@ -13,7 +36,13 @@
 			<ul class="main">
 				{% for item in site.pages %}
 					{% if item.category == "main" %}
-						<li class="{% if item.url == page.url %}current{% endif %}">
+
+						{% assign item_url = item.url | remove_first: "/pages/" %}
+						{% assign item_url_parts = item_url | split: "/" %}
+						{% assign item_section = item_url_parts | first %}
+						{% assign item_section = item_section | remove_first: ".html" %}
+
+						<li class="{% if item.url == page.url %}current{% endif %} {% if item_section == page_section %}current-section{% endif %}">
 							<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
 						</li>
 					{% endif %}
@@ -47,4 +76,17 @@
 			</a>
 		</nav>
 	</div>
+
+	{% if has_sub_nav %}
+		<div class="sub-header">
+			<div class="inner">
+				<nav id="sub-nav">
+					<ul class="main">
+						{{ sub_nav }}
+					</ul>
+				</nav>
+			</div>
+		</div>
+	{% endif %}
+
 </header>

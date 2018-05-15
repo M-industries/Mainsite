@@ -1,8 +1,6 @@
 ---
 layout: page
 title: 'Case: Visual Factory'
-category: main
-permalink: /vf/
 
 anchors:
   - label: About

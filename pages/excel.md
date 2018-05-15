@@ -2,7 +2,6 @@
 layout: page
 title: Convert Excel
 category: main
-permalink: /excel/
 
 hero: /assets/page-hero.jpg
 
