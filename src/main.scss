@@ -526,6 +526,7 @@ blockquote {
 	background-blend-mode: multiply;
 	background-size: 50%;
 	color: $grey2;
+	font-size: 1em/$ratio;
 	&.sapa {
 		background-image: url("../assets/brands/sapa.png");
 	}
