@@ -346,7 +346,7 @@ footer {
 	&.photo {
 		background-size: cover;
 	}
-	span {
+	> span {
 		display: block;
 		color: $beige;
 		font-size: 2rem;
