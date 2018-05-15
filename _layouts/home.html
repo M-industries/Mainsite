@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	{% include head.html %}
-	<body>
+	<body class="home">
 		{% include header.html %}
 
-		<div class="hero photo" style="background-image: url({{ 'assets/home-hero1.jpg' | relative_url }})">
+		<div class="hero" style="background-image: url({{ 'assets/home-hero1.jpg' | relative_url }})">
 			<span>
 				<strong>Got you here&hellip;</strong><br>
 				Won't get you there.<br>
@@ -15,7 +15,7 @@
 
 		<article>
 			<h1>Upgrade legacy systems</h1>
-			<section class="homepage">
+			<section>
 				<p>
 					Integrate with, extend and if necessary replace any legacy
 					system without a risky custom development project.
@@ -71,12 +71,12 @@
 
 		</article>
 
-		<div class="hero photo" style="background-image: url({{ 'assets/home-hero.jpg' | relative_url }})">
+		<div class="hero" style="background-image: url({{ 'assets/home-hero.jpg' | relative_url }})">
 		</div>
 
 		<article>
 			<h1>Convert Excel to Apps</h1>
-			<section class="homepage">
+			<section>
 				<p>
 					You know you can't move on like this.
 					People are making mistakes, status reports take too long,

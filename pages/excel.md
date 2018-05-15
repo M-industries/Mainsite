@@ -4,6 +4,8 @@ title: Convert Excel
 category: main
 permalink: /excel/
 
+hero: /assets/page-hero.jpg
+
 anchors:
   - label: Too much Excel
     name: much
