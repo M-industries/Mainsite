@@ -452,7 +452,7 @@ a.button {
 	border: 1px solid darken($orange, 8%);
 	border-radius: 6px;
 	color: #fff;
-	padding: 0 1em/$ratio/$ratio;
+	padding: 1em/$ratio/$ratio/$ratio/$ratio 1em/$ratio/$ratio;
 	@include breathe(background);
 	&:hover,
 	&:active {
