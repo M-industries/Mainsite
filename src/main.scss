@@ -306,15 +306,6 @@ footer {
 		}
 	}
 
-	@media (min-width: $breakpoint ) {
-		.has-subnav + & {
-			top: 8rem;
-		}
-		.page .has-subnav ~ & + article {
-			margin-top: 12rem;
-		}
-	}
-
 	> span {
 		display: block;
 		color: $beige;
