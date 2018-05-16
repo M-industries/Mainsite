@@ -58,6 +58,9 @@ h1 {
 	font-size: 4em;
 	padding-top: 1em;
 	margin: 0 0 1em 0;
+	@media (max-width: $breakpoint) {
+		font-size: 2em*$ratio;
+	}
 }
 h2 {
 	font-size: 1em*$ratio;
@@ -227,47 +230,55 @@ header {
 		}
 	}
 
-	@media (max-width: $breakpoint) {
-		nav {
-			position: fixed;
-			z-index: 1;
-			background: white;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			display: none;
-			padding: $fat;
-			&.open {
-				display: block;
-			}
-		}
-		ul {
-			display: block;
-			flex: 0;
-			text-align: center;
-		}
-		ul.main li {
-			display: block;
-			+ li {
-				padding-left: 0;
-			}
-		}
-		ul.secondary {
-			position: static;
-		}
-
-		.nav-toggle {
-			display: block;
-		}
-	}
-
-	.sub-header {
+	.sub-nav {
 		border-top: 1px dotted $grey5;
 		font-style: italic;
 		ul {
 			padding-top: 3px;
 			padding-bottom: 0;
+		}
+	}
+
+	@media (max-width: $breakpoint) {
+		> .inner {
+			flex-wrap: wrap;
+		}
+		.main-nav,
+		.sub-nav {
+			display: none;
+		}
+		&.open {
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			.main-nav,
+			.sub-nav {
+				display: flex;
+			}
+		}
+		ul.main {
+			border-top: 1px solid $grey5;
+			flex-direction: column;
+			align-items: center;
+			li + li {
+				padding-left: 0;
+			}
+		}
+
+		.nav-toggle {
+			display: block;
+		}
+
+		ul.secondary {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-top: 1px solid $grey5;
+			background: white;
+			z-index: 1;
+			justify-content: center;
 		}
 	}
 }
@@ -377,18 +388,22 @@ footer {
 		z-index: -1;
 		border: none;
 
-		@media (max-width: $hero-size) {
-			left: 0;
-			margin-left: 0;
-			width: 100%;
-		}
-
 		+ article {
 			margin-top: 10rem;
 			h1 {
 				color: #fff;
 				text-shadow: 0 0 2px rgba(0,0,0,.3);
 			}
+		}
+
+		@media (max-width: $hero-size) {
+			left: 0;
+			margin-left: 0;
+			width: 100%;
+		}
+
+		@media (max-width: $breakpoint) {
+			top: 2rem*$ratio;
 		}
 	}
 	.has-subnav + & {
@@ -407,13 +422,14 @@ footer {
 		left: 50%;
 		margin-right: 1rem*$ratio;
 
-		@media (max-width: $breakpoint) {
-			font-size: 1em;
-		}
-
 		strong {
 			font-size: 2em;
 			line-height: 1;
+		}
+
+		@media (max-width: $breakpoint) {
+			font-size: 1em*$ratio;
+			left: 1rem*$ratio;
 		}
 	}
 
@@ -423,7 +439,6 @@ footer {
 		max-width: 100%;
 	}
 }
-
 
 article {
 	max-width: $base-width;
@@ -472,16 +487,18 @@ article {
 		nav {
 			display: none;
 		}
-		section {
+		section,
+		.home & h1+section {
 			padding-left: 0;
 			max-width: $base-width - 8rem*$ratio;
 			margin-left: auto;
 			margin-right: auto;
-			padding-left: 1rem*$ratio;
-			padding-right: 1rem*$ratio;
+			padding-left: 2rem*$ratio;
+			padding-right: 2rem*$ratio;
 		}
 		h1 {
 			padding-left: 1rem*$ratio;
+			padding-right: 1rem*$ratio;
 		}
 	}
 }
@@ -496,6 +513,9 @@ article {
 		padding: 0 1rem;
 		text-align: center;
 		flex: 1;
+	}
+	@media (max-width: $breakpoint) {
+		display: none;
 	}
 }
 

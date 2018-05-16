@@ -1,9 +1,11 @@
 // good old obtrusive JavaScript
 function menuOpen() {
-	document.getElementById("main-nav").classList.add("open");
-}
-function menuClose() {
-	document.getElementById("main-nav").classList.remove("open");
+	var el = document.querySelector("header");
+	if(el.classList.contains("open")) {
+		el.classList.remove("open");
+	} else {
+		el.classList.add("open");
+	}
 }
 
 window.onload = function() {
