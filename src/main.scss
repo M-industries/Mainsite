@@ -516,23 +516,13 @@ a.button {
 
 blockquote {
 	quotes: "“" " ”" "‘" "’";
-	padding: 1em*$ratio 1em*$ratio 2rem*$ratio*$ratio 1em*$ratio;
+	padding: 1em*$ratio;
 	margin: 0;
 	border: 1px solid $grey5;
 	border-radius: 3px;
 	background: $grey6;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	background-blend-mode: multiply;
-	background-size: 50%;
 	color: $grey2;
 	font-size: 1em/$ratio;
-	&.sapa {
-		background-image: url("../assets/brands/sapa.png");
-	}
-	&.tata {
-		background-image: url("../assets/brands/tata.png");
-	}
 
 	.inner::before {
 		content: open-quote;
