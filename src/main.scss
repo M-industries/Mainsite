@@ -2,111 +2,7 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 ---
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400i,700");
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400");
-
-$black: #333;
-$beige: #b6a99b;
-$grey-base: mix($beige, lighten($black, 16%));
-$grey1: $grey-base;
-$grey2: lighten($grey-base, 8%);
-$grey3: lighten($grey-base, 16%);
-$grey4: lighten($grey-base, 24%);
-$grey5: lighten($grey-base, 32%);
-$grey6: lighten($grey-base, 40%);
-
-$blue: #2f59bc;
-$orange: #ffa32c;
-$green: #22c546;
-$red: #ff3e29;
-$purple: #a42fbc;
-$teal: #1db2a2;
-
-$brand-color: #374996;
-
-
-$ratio: 1.414;
-$fat: 1rem/$ratio 1rem 1rem/$ratio/$ratio 1rem;
-
-$base-width: 45rem;              // = 720 / 16px
-$breakpoint: $base-width + 5rem; // + 80px
-
-* {
-	box-sizing: border-box;
-}
-
-@mixin breathe($property) {
-	transition: $property .5s ease-in-out;
-
-	&:hover,
-	&:active {
-		transition: $property .1s ease-in-out;
-	}
-}
-
-html,
-body {
-	color: $black;
-	font-size: 16px;
-	line-height: $ratio;
-	font-family: "Source Sans Pro", sans-serif;
-	width: 100%;
-	height: 100%;
-}
-
-h1 {
-	font-size: 4em;
-	padding-top: 1em;
-	margin: 0 0 1em 0;
-	@media (max-width: $breakpoint) {
-		font-size: 2em*$ratio;
-	}
-}
-h2 {
-	font-size: 1em*$ratio;
-	margin: 1em*$ratio 0 1em/$ratio/$ratio 0;
-}
-h3 {
-	font-size: 1em;
-	margin: 1em 0 0 0;
-}
-address,
-p,
-pre {
-	margin: 1em auto 1em*$ratio auto;
-}
-small {
-	font-size: 1em/$ratio;
-	line-height: 2;
-}
-
-ol,
-ul {
-	margin: 1em auto 1em*$ratio auto;
-	padding: 0;
-	li {
-		margin-bottom: 1em/$ratio/$ratio;
-	}
-	nav & {
-		margin-top: 0;
-		li {
-			margin-bottom: 0;
-		}
-	}
-}
-
-a,
-a:link,
-a:visited,
-a:hover,
-a:active {
-	color: #2f59bc;
-	text-decoration: none;
-}
-a:hover,
-a:active {
-	text-decoration: underline;
-}
+@import "theme";
 
 a[name] {
 	display: block;
@@ -118,32 +14,27 @@ a[name] {
 }
 
 header {
-	border-bottom: 1px solid $grey5;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #fff;
 	z-index: 1;
+	background: #fff;
+	border-bottom: 1px solid $grey5;
+	overflow: hidden;
 
 	.inner {
 		max-width: 1280px - 80*2;
 		margin: 0 auto;
-		display: flex;
 		position: relative;
 	}
 
-	nav {
-		width: 100%;
-		display: flex;
-	}
-
 	ul {
-		display: inline-block;
-		display: flex;
-		align-content: center;
-		flex: 1;
 		margin: 0;
-		padding: $fat;
+
+		@media (max-width: $breakpoint) {
+			display: none;
+			clear: both;
+		}
 
 		a {
 			@include breathe(border-bottom-color);
@@ -175,23 +66,14 @@ header {
 			border-bottom-color: $orange;
 			font-weight: bold;
 		}
-
-		&.secondary {
-			flex-grow: 0;
-			font-size: 1em/$ratio;
-			position: absolute;
-			right: 0;
-			li {
-				text-align: right;
-			}
-		}
 	}
 
 	li {
 		display: inline-block;
 		line-height: calc(2rem - 6px);
+		padding: $fat;
 		+ li {
-			padding-left: 1em*$ratio;
+			padding-left: 0;
 		}
 		svg,
 		img {
@@ -199,13 +81,60 @@ header {
 		}
 	}
 
+	.main li:first-child {
+		@media (min-width: $breakpoint + 1) {
+			border-left: 1px solid $grey5;
+		}
+	}
+	.sub {
+		@media (min-width: $breakpoint + 1) {
+			padding-left: calc(168px + 2rem);
+		}
+		li {
+			padding-top: 3px;
+			padding-bottom: 0;
+			font-style: italic;
+			@media (max-width: $breakpoint) {
+				padding-left: 1rem;
+				display: block;
+			}
+		}
+		&::before {
+			content: "";
+			display: block;
+			border-top: 1px dotted $grey5;
+			left: -50%;
+			position: relative;
+			width: 200%;
+		}
+	}
+	.secondary {
+		font-size: 1em/$ratio;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		@media (max-width: $breakpoint) {
+			position: fixed;
+			top: auto;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-top: 1px solid $grey5;
+			background: #fff;
+			z-index: 1;
+		}
+	}
+
 	.logo {
-		padding: $fat;
-		border-right: 1px solid $grey5;
+		display: block;
 		float: left;
+		padding: $fat;
+		box-sizing: content-box;
+		height: 1rem*$ratio*$ratio;
 		img {
 			display: block;
-			height: 1.414rem;
+			height: 1rem*$ratio;
 		}
 	}
 
@@ -215,6 +144,9 @@ header {
 		display: none;
 		color: $black;
 		padding: $fat;
+		position: absolute;
+		right: 0;
+		top: 0;
 
 		&:hover,
 		&:active {
@@ -223,62 +155,20 @@ header {
 		svg {
 			fill: currentColor;
 		}
-		&.close {
-			position: absolute;
-			right: 1rem/$ratio;
-			top: 1rem/$ratio;
-		}
-	}
-
-	.sub-nav {
-		border-top: 1px dotted $grey5;
-		font-style: italic;
-		ul {
-			padding-top: 3px;
-			padding-bottom: 0;
+		@media (max-width: $breakpoint) {
+			display: block;
 		}
 	}
 
 	@media (max-width: $breakpoint) {
-		> .inner {
-			flex-wrap: wrap;
-		}
-		.main-nav,
-		.sub-nav {
-			display: none;
-		}
 		&.open {
+			top: 0;
 			bottom: 0;
 			left: 0;
 			right: 0;
-
-			.main-nav,
-			.sub-nav {
-				display: flex;
+			ul {
+				display: block;
 			}
-		}
-		ul.main {
-			border-top: 1px solid $grey5;
-			flex-direction: column;
-			align-items: center;
-			li + li {
-				padding-left: 0;
-			}
-		}
-
-		.nav-toggle {
-			display: block;
-		}
-
-		ul.secondary {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			border-top: 1px solid $grey5;
-			background: white;
-			z-index: 1;
-			justify-content: center;
 		}
 	}
 }
@@ -308,15 +198,14 @@ footer {
 		margin: 0 auto;
 		display: flex;
 
-		section + section {
-			margin-left: 4rem;
+		@media (min-width: $breakpoint + 1) {
+			section + section {
+				margin-left: 4rem;
+			}
 		}
 
 		@media (max-width: $breakpoint) {
 			flex-direction: column;
-			section + section {
-				margin-left: 0;
-			}
 		}
 	}
 
@@ -519,43 +408,4 @@ article {
 	}
 }
 
-
-a.button {
-	background: $orange;
-	border: 1px solid darken($orange, 8%);
-	border-radius: 6px;
-	color: #fff;
-	padding: 1em/$ratio/$ratio/$ratio/$ratio 1em/$ratio/$ratio;
-	@include breathe(background);
-	&:hover,
-	&:active {
-		text-decoration: none;
-		background: darken($orange, 8%);
-	}
-}
-
-blockquote {
-	quotes: "“" " ”" "‘" "’";
-	padding: 1em*$ratio;
-	margin: 0;
-	border: 1px solid $grey5;
-	border-radius: 3px;
-	background: $grey6;
-	color: $grey2;
-	font-size: 1em/$ratio;
-
-	.inner::before {
-		content: open-quote;
-		position: absolute;
-		left: 1em/$ratio;
-	}
-	.inner::after {
-		content: close-quote;
-	}
-	small {
-		display: block;
-		font-style: italic;
-		padding-top: 1rem;
-	}
-}
 
