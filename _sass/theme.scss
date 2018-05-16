@@ -26,6 +26,7 @@ $fat: 1rem/$ratio 1rem 1rem/$ratio/$ratio 1rem;
 
 $base-width: 45rem;              // = 720 / 16px
 $breakpoint: $base-width + 5rem; // + 80px
+$hero-size: $base-width + 2 * 5rem;
 
 * {
 	box-sizing: border-box;

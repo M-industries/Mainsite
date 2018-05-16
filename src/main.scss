@@ -82,12 +82,12 @@ header {
 	}
 
 	.main li:first-child {
-		@media (min-width: $breakpoint + 1) {
+		@media (min-width: $breakpoint ) {
 			border-left: 1px solid $grey5;
 		}
 	}
 	.sub {
-		@media (min-width: $breakpoint + 1) {
+		@media (min-width: $breakpoint ) {
 			padding-left: calc(168px + 2rem);
 		}
 		li {
@@ -146,7 +146,7 @@ header {
 		padding: $fat;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 3px;
 
 		&:hover,
 		&:active {
@@ -154,6 +154,7 @@ header {
 		}
 		svg {
 			fill: currentColor;
+			display: none;
 		}
 		@media (max-width: $breakpoint) {
 			display: block;
@@ -169,6 +170,12 @@ header {
 			ul {
 				display: block;
 			}
+			.closer {
+				display: block;
+			}
+		}
+		&:not(.open) .opener {
+			display: block;
 		}
 	}
 }
@@ -198,7 +205,7 @@ footer {
 		margin: 0 auto;
 		display: flex;
 
-		@media (min-width: $breakpoint + 1) {
+		@media (min-width: $breakpoint ) {
 			section + section {
 				margin-left: 4rem;
 			}
@@ -268,9 +275,11 @@ footer {
 	}
 
 	.page & {
-		$hero-size: $base-width + 2 * 5rem;
 		width: $hero-size;
-		max-height: 16rem;
+		height: 16rem;
+		@media (max-width: $breakpoint) {
+			height: 16rem - 7rem + 2rem*$ratio;
+		}
 		position: absolute;
 		top: 6rem;
 		left: 50%;
@@ -280,6 +289,9 @@ footer {
 
 		+ article {
 			margin-top: 10rem;
+			@media (max-width: $hero-size) {
+				margin-top: 10rem - 6rem + 2rem*$ratio;
+			}
 			h1 {
 				color: #fff;
 				text-shadow: 0 0 2px rgba(0,0,0,.3);
@@ -290,17 +302,17 @@ footer {
 			left: 0;
 			margin-left: 0;
 			width: 100%;
-		}
-
-		@media (max-width: $breakpoint) {
 			top: 2rem*$ratio;
 		}
 	}
-	.has-subnav + & {
-		top: 8rem;
-	}
-	.page .has-subnav ~ & + article {
-		margin-top: 12rem;
+
+	@media (min-width: $breakpoint ) {
+		.has-subnav + & {
+			top: 8rem;
+		}
+		.page .has-subnav ~ & + article {
+			margin-top: 12rem;
+		}
 	}
 
 	> span {
@@ -339,7 +351,9 @@ article {
 	}
 
 	h1 {
-		border-bottom: 2px solid transparentize($grey2, .7);
+		@media (min-width: $breakpoint ) {
+			border-bottom: 2px solid transparentize($grey2, .7);
+		}
 	}
 	.intro {
 		color: $orange;
@@ -387,8 +401,8 @@ article {
 			padding-right: 2rem*$ratio;
 		}
 		h1 {
-			padding-left: 1rem*$ratio;
-			padding-right: 1rem*$ratio;
+			padding-left: 2rem*$ratio;
+			padding-right: 2rem*$ratio;
 		}
 	}
 }
