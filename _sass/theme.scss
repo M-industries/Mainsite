@@ -111,11 +111,18 @@ a.button {
 	border-radius: 6px;
 	color: #fff;
 	padding: 1em/$ratio/$ratio/$ratio/$ratio 1em/$ratio/$ratio;
+	text-shadow: 1px 1px 4px transparentize($grey2, .7);
+	box-shadow: 1px 1px 4px transparentize($grey2, .7);
+	position: relative;
 	@include breathe(background);
 	&:hover,
 	&:active {
 		text-decoration: none;
 		background: darken($orange, 8%);
+	}
+	&:active {
+		top: 1px;
+		box-shadow: inset 1px 1px 2px transparentize($grey2, .7);
 	}
 }
 
