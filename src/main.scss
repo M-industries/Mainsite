@@ -82,12 +82,12 @@ header {
 	}
 
 	.main li:first-child {
-		@media (min-width: $breakpoint ) {
+		@media (min-width: $breakpoint) {
 			border-left: 1px solid $grey5;
 		}
 	}
 	.sub {
-		@media (min-width: $breakpoint ) {
+		@media (min-width: $breakpoint) {
 			padding-left: calc(168px + 2rem);
 		}
 		li {
@@ -205,7 +205,7 @@ footer {
 		margin: 0 auto;
 		display: flex;
 
-		@media (min-width: $breakpoint ) {
+		@media (min-width: $breakpoint) {
 			section + section {
 				margin-left: 4rem;
 			}
@@ -305,6 +305,20 @@ footer {
 			top: 2rem*$ratio;
 		}
 	}
+	.page .has-subnav + & {
+		@media (min-width: $breakpoint) {
+			top: 6rem + 2rem;
+			+ article {
+				margin-top: 10rem + 2rem;
+				@media (max-width: $hero-size) {
+					margin-top: 10rem + 2rem - 6rem + 2rem*$ratio;
+				}
+			}
+		}
+		@media (min-width: $breakpoint) and (max-width: $hero-size) {
+			top: 2rem*$ratio + 2rem;
+		}
+	}
 
 	> span {
 		display: block;
@@ -342,7 +356,7 @@ article {
 	}
 
 	h1 {
-		@media (min-width: $breakpoint ) {
+		@media (min-width: $breakpoint) {
 			border-bottom: 2px solid transparentize($grey2, .7);
 		}
 	}
