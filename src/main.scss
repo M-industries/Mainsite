@@ -417,6 +417,9 @@ article {
 	justify-content: space-around;
 	color: $beige;
 	margin: 2rem*$ratio 0;
+	img {
+		filter: drop-shadow(1px 1px 4px transparentize($grey2, .7));
+	}
 	span {
 		display: inline-block;
 		padding: 0 1rem;
