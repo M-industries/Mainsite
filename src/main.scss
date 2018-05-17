@@ -103,9 +103,9 @@ header {
 			content: "";
 			display: block;
 			border-top: 1px dotted $grey5;
-			left: -50%;
-			position: relative;
-			width: 200%;
+			left: 0;
+			position: fixed;
+			width: 100vw;
 		}
 	}
 	.secondary {
