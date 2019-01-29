@@ -14,7 +14,7 @@ anchors:
 
 <a name="support"></a>
 For questions or issues with your application,
-please contact us at [support@m-industries.com](mailto:support@m-industries.com)
+please contact us at [service@m-industries.com](mailto:service@m-industries.com)
 
 <a name="freshdesk"></a>
 ## Helpdesk and support tickets

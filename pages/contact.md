@@ -21,7 +21,7 @@ anchors:
 <a name="info"></a>
 <p class="intro">Want to know what M-industries could mean for your business?</p>
 Contact us for a demo or workshop.
-	
+
 {% include contact.md %}
 
 
@@ -36,7 +36,7 @@ M-industries is situated on the campus of the Delft University of Technology.
 	The Netherlands
 </address>
 
-[info@m-industries.com](mailto:info@m-industries.com)  
+[info@m-industries.com](mailto:info@m-industries.com)
 [+31 15 268 26 17](tel:+31651525053)
 
 [LinkedIn](https://www.linkedin.com/company/m-industries)
@@ -47,7 +47,7 @@ M-industries is situated on the campus of the Delft University of Technology.
 ## Support
 
 For questions or issues with your application,
-please contact us at [support@m-industries.com](mailto:support@m-industries.com)
+please contact us at [service@m-industries.com](mailto:service@m-industries.com)
 
 For the current status of your support ticket, please refer to our
 [Freshdesk portal](https://fabric.freshdesk.com).
