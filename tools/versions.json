@@ -1,0 +1,41 @@
+{
+	"platform version": "2018.2",
+	"system types": {
+		"auto-webclient": {
+			"version": "federation.a9"
+		},
+		"auto-webclient-next": {
+			"version": "holodeck.a2"
+		},
+		"custom-consumer": {
+			"version": "6"
+		},
+		"custom-provider": {
+			"version": "6"
+		},
+		"datastore": {
+			"version": "9"
+		},
+		"datastore-next": {
+			"version": "9"
+		},
+		"relational-database-bridge": {
+			"version": "63"
+		},
+		"reporter": {
+			"version": "6"
+		},
+		"smartbox": {
+			"version": "2.1"
+		},
+		"smartcard": {
+			"version": "2"
+		},
+		"webclient": {
+			"version": "federation.33"
+		},
+		"webclient-next": {
+			"version": "holodeck.2"
+		}
+	}
+}
