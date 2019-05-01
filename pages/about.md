@@ -37,7 +37,7 @@ the language and the systems that it supports.
 
 Go to the [Alan micro-site](https://alan-platform.com) to learn more.
 
-Development of the Alan platform has been taken over by [Kjerner](https://www.kjerner.com), so you can contact them directly as well.
+Development of the Alan platform has been taken over by [Kjerner](https://www.kjerner.com), so please contact them directly if you want to know more about Alan.
 
 
 <a name="learn"></a>
