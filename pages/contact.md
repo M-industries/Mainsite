@@ -37,7 +37,6 @@ M-industries is situated on the campus of the Delft University of Technology.
 </address>
 
 [info@m-industries.com](mailto:info@m-industries.com)
-[+31 15 268 26 17](tel:+31651525053)
 
 [LinkedIn](https://www.linkedin.com/company/m-industries)
 [GitHub](https://github.com/M-industries)
